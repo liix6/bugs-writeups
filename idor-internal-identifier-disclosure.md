@@ -36,9 +36,9 @@ returning internal fields intended for privileged/internal use only.
 1. Log in as Account A on the target community platform.
 2. Intercept the following request using an HTTP proxy (e.g., Burp Suite):
 
-'''
+```
 GET /ajax/user/frontend/user/othersInfo?uid=XXXXX
-'''
+```
 
 
 3. Modify the `uid` parameter to the identifier of another user (Account B).
