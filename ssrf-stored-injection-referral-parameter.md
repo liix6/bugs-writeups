@@ -7,7 +7,7 @@
 
 ---
 
-## The Story
+## The vulnerability
 
 I was testing a chat widget embedded on a web platform — the kind of "talk to us" bubble you see in the corner of almost every site nowadays. Like any tester, my first instinct was to poke at the obvious input: the message box itself. No surprise there — the `query` field was well sanitized. Anything resembling a payload got stripped or blocked before it even left the browser.
 
