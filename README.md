@@ -1,4 +1,4 @@
-# 🔐 Bug Bounty Writeups
+# 🔐 Bugs Porgrams Writeups
 
 Real-world vulnerability writeups discovered during independent penetration
 testing and bug bounty engagements across private programs, enterprise
