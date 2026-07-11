@@ -1,1 +1,37 @@
+# IDOR — Internal Sensitive Identifier Disclosure via User Info Endpoint
 
+**Category:** IDOR (Insecure Direct Object Reference)
+**Severity:** High
+**Target Type:** Community Platform (Large-scale consumer tech company) — *Program name anonymized per disclosure policy*
+
+---
+
+## Summary
+
+An IDOR vulnerability was identified in a community platform's user information
+endpoint. By modifying a numeric `uid` parameter, an attacker could retrieve
+another user's private data — including a sensitive internal identifier used
+to correlate accounts across internal company systems — without any
+authorization checks.
+
+Key issues:
+- No access control enforced on the `uid` parameter
+- An internal sensitive identifier is exposed in the API response
+- This identifier links the user's account across multiple internal
+  platforms, enabling cross-system user correlation
+
+---
+
+## Vulnerability Details
+
+The `othersInfo` endpoint accepts a `uid` parameter to retrieve public profile
+data for a given user. However, the endpoint fails to verify that the
+requesting user is authorized to view the target user's full data set,
+returning internal fields intended for privileged/internal use only.
+
+---
+
+## Steps to Reproduce
+
+1. Log in as Account A on the target community platform.
+2. Intercept the following request using an HTTP proxy (e.g., Burp Suite):
